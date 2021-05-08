@@ -32,7 +32,7 @@
 > pkg update -y
 > pkg upgrade -y
 > pkg install git -y
-> git clone https://github.com/sanzorez/sabot
+> git clone https://github.com/sanzorez/selfsanz
 > cd sabot
 > npm cache clear
 > bash install.sh
@@ -58,7 +58,7 @@
 
 ```bash
 ( if that is all done installed / jika  semua sudah terinstall )
-> git clone https://github.com/sanzorez/sabot
+> git clone https://github.com/sanzorez/selfsanz
 > cd sabot
 > bash install.sh
 > npm start
