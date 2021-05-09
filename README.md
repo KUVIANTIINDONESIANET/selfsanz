@@ -79,6 +79,69 @@
 | ON |✅|
 | STATUS |✅|
 
+| INFORMATION |✅|
+| ------------- | ------------- |
+| Covid Indo |✅|
+| Covid World |✅|
+
+| TOOLS |✅|
+| ------------- | ------------- |
+| REVERSE IP |✅|
+| GET (ScreenShoot Website) |✅|
+
+| WIBU |✅|
+| ------------- | ------------- |
+| LOLI |✅|
+| WAIFU |✅|
+| HUSBU |✅|
+
+| IMAGE |✅|
+| ------------- | ------------- |
+| NSFWAVATAR |✅|
+| NEKOPOI |✅|
+| PUSSY |✅|
+| PUSSYIMAGE |✅|
+| OPPAI |✅|
+| FEETG |✅|
+| BJ |✅|
+| ERO |✅|
+| EROKEMO |✅|
+| EROYURI |✅|
+| TICKLE |✅|
+| FEED |✅|
+| KUNI |✅|
+| FEMDOM |✅|
+| FUTUNARI |✅|
+| LES |✅|
+| TRAP |✅|
+| PAT |✅|
+| BOOBS |✅|
+| BLOWJOB |✅|
+| HENTAI |✅|
+| HOLOLEWED |✅|
+| LEWD |✅|
+| LEWDK |✅|
+| LEWDKEMO |✅|
+| GOOSE |✅|
+| SOLOG |✅|
+| YURI |✅|
+| ANAL |✅|
+| PWANKG |✅|
+| ERON |✅|
+| KISS |✅|
+| KETA |✅|
+| CUM |✅|
+| CUMIMAGE |✅|
+| OPPAI |✅|
+| HOLOERO |✅|
+
+| IMAGE |✅|
+| ------------- | ------------- |
+| IMAGE |✅|
+| PINTEREST |✅|
+| ANIME  |✅|
+| WALPAPERANIME |✅|
+
 | MAKER |✅|
 | ------------- | ------------- |
 | STICKER |✅|
@@ -109,7 +172,6 @@
 | FITNAH PC |✅|
 | KONTAK |✅|
 
-
 | TAG |✅|
 | ------------- | ------------- |
 | STICKTAG |✅|
@@ -119,20 +181,18 @@
 
 | DOWNLOAD |✅|
 | ------------- | ------------- |
-| YTSEARCH |✅|
 | IGSTALK |✅|
+| IG |✅|
 | PLAY |✅|
 | VIDEO |✅|
 | YTMP3 |✅|
 | YTMP4 |✅|
-| IGDL |✅|
-| FBDL |✅|
-| TIKTOKDL |✅|
-| TIKTOK AUDIO |✅|
+| YTSEARCH |✅|
 | TWITTER |✅|
+| TIKTOK |✅|
+| TIKTOKAUDIO |✅|
+| FB |✅|
 | BRAINLY |✅|
-| IMAGE |✅|
-| ANIME |✅|
 
 | OTHER |✅|
 | ------------- | ------------- |
