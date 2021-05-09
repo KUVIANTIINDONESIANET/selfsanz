@@ -95,7 +95,7 @@
 | WAIFU |✅|
 | HUSBU |✅|
 
-| IMAGE |✅|
+| NSFW |✅|
 | ------------- | ------------- |
 | NSFWAVATAR |✅|
 | NEKOPOI |✅|
