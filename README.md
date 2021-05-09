@@ -73,29 +73,29 @@
 
 # PIMTUR
 
-| OWNER |✅|
+| OWNER |YOI|
 | ------------- | ------------- |
 | OFF |✅|
 | ON |✅|
 | STATUS |✅|
 
-| INFORMATION |✅|
+| INFORMATION |YOI|
 | ------------- | ------------- |
 | Covid Indo |✅|
 | Covid World |✅|
 
-| TOOLS |✅|
+| TOOLS |YOI|
 | ------------- | ------------- |
 | REVERSE IP |✅|
 | GET (ScreenShoot Website) |✅|
 
-| WIBU |✅|
+| WIBU |YOI|
 | ------------- | ------------- |
 | LOLI |✅|
 | WAIFU |✅|
 | HUSBU |✅|
 
-| NSFW |✅|
+| NSFW |YOI|
 | ------------- | ------------- |
 | NSFWAVATAR |✅|
 | NEKOPOI |✅|
@@ -135,14 +135,14 @@
 | OPPAI |✅|
 | HOLOERO |✅|
 
-| IMAGE |✅|
+| IMAGE |YOI|
 | ------------- | ------------- |
 | IMAGE |✅|
 | PINTEREST |✅|
 | ANIME  |✅|
 | WALPAPERANIME |✅|
 
-| MAKER |✅|
+| MAKER |YOI|
 | ------------- | ------------- |
 | STICKER |✅|
 | STICKER GIF |✅|
@@ -150,7 +150,7 @@
 | TAKE STICKER |✅|
 | FDEFACE |✅|
 
-| CONVERT |✅|
+| CONVERT |YOI|
 | ------------- | ------------- |
 | TOIMG |✅|
 | TOMP3 |✅|
@@ -160,26 +160,26 @@
 | REVERSE |✅|
 | TOURL |✅|
 
-| UP STORY |✅|
+| UP STORY |YOI|
 | ------------- | ------------- |
 | UPSWTEXT |✅|
 | UPSWIMAGE |✅|
 | UPSWVIDEO  |✅|
 
-| FUN |✅|
+| FUN |YOI|
 | ------------- | ------------- |
 | FITNAH |✅|
 | FITNAH PC |✅|
 | KONTAK |✅|
 
-| TAG |✅|
+| TAG |YOI|
 | ------------- | ------------- |
 | STICKTAG |✅|
 | HIDETAG |✅|
 | KONTAG |✅|
 | TOTAG |✅|
 
-| DOWNLOAD |✅|
+| DOWNLOAD |YOI|
 | ------------- | ------------- |
 | IGSTALK |✅|
 | IG |✅|
@@ -194,7 +194,7 @@
 | FB |✅|
 | BRAINLY |✅|
 
-| OTHER |✅|
+| OTHER |YOI|
 | ------------- | ------------- |
 | SELF |✅|
 | PUBLIC |✅|
