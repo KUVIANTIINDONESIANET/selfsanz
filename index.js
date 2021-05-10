@@ -220,6 +220,37 @@ sanz.on('chat-update', async (mek) => {
                 }
             })
         }
+const faketokoforwaded = (teks, fake) => {
+	anu = {
+	  key: {
+			fromMe: false,
+			participant: `0@s.whatsapp.net`, ...(from ? { remoteJid: "status@broadcast" } : {})
+		},
+		message: {
+			"productMessage": {
+				"product": {
+					"productImage":{
+						"mimetype": "image/jpeg",
+						"jpegThumbnail": fs.readFileSync(`./stik/thumb.jpeg`)
+					},
+					"title": fake,
+					"description": "Self Aqulzz nih Boss",
+					"currencyCode": "IDR",
+					"priceAmount1000": "50000000",
+					"retailerId": "Self Bot",
+					"productImageCount": 1
+				},
+				"businessOwnerJid": `0@s.whatsapp.net`
+		}
+	}
+}
+	sanz.sendMessage(from, teks, text, {
+	  quoted: anu,
+	  contextInfo:{
+	    "forwardingScore": 999, "isForwarded": true
+	  }
+	})
+}
         const sendStickerFromUrl = async(to, url) => {
                 var names = Date.now() / 10000;
                 var download = function (uri, filename, callback) {
@@ -493,7 +524,7 @@ switch (command) {
 ❏ *Note*
 └ jika terdapat bug hubungi sajah owner yah kawan :)
 `
-        	fakestatus(menu)
+        	faketokoforwaded(menu)
            	break
     case prefix+ 'on':
             if (!mek.key.fromMe) return 
