@@ -763,26 +763,6 @@ switch (command) {
             fs.unlinkSync(ran)
             })
             break
-//
-    case prefix+ 'anime':
-            reply(mess.wait)
-            fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
-            .then(res => res.text())
-            .then(body => {
-            let tod = body.split("\n");
-            let pjr = tod[Math.floor(Math.random() * tod.length)];
-            imageToBase64(pjr)
-            .then((response) => {
-            media =  Buffer.from(response, 'base64');
-            sanz.sendMessage(from,media,image,{quoted:mek,caption:'NIH'})
-            }
-            )
-            .catch((error) => {
-            console.log(error); 
-            }
-            )
-            });
-            break
     case prefix+ 'kontak':
             pe = args.join(' ') 
             entah = pe.split('|')[0]
@@ -1424,6 +1404,47 @@ case prefix+'avatar':
 				return('Mengulang lord ada yg mengerror...')
 			})
 			break
+//IMAGE
+case prefix+ 'image':
+            if (args.length < 1) return reply('Masukan teks!')
+            const gimg = args.join('');
+            reply(mess.wait)
+            gis(gimg, async (error, result) => {
+            n = result
+            images = n[Math.floor(Math.random() * n.length)].url
+            sanz.sendMessage(from,{url:images},image,{quoted:mek})
+            });
+            break
+case prefix+'pinterest':
+			goblog = args.join(" ")
+			anu = await fetchJson(`https://api.fdci.se/rep.php?gambar=${goblog}`)
+			sasu = JSON.parse(JSON.stringify(anu));
+			ke =  sasu[Math.floor(Math.random() * sasu.length)];
+			nye = await getBuffer(ke)
+			sanz.sendMessage(from, nye, image, { caption: 'Powered bai gatau pinterest lah bang awokwok', quoted: mek })
+			.catch(err => {
+				return('lagi sange bang? nyari apaan loh?, puasa bang xixixi')
+			})
+			break
+    case prefix+ 'anime':
+            reply(mess.wait)
+            fetch('https://raw.githubusercontent.com/pajaar/grabbed-results/master/pajaar-2020-gambar-anime.txt')
+            .then(res => res.text())
+            .then(body => {
+            let tod = body.split("\n");
+            let pjr = tod[Math.floor(Math.random() * tod.length)];
+            imageToBase64(pjr)
+            .then((response) => {
+            media =  Buffer.from(response, 'base64');
+            sanz.sendMessage(from,media,image,{quoted:mek,caption:'NIH'})
+            }
+            )
+            .catch((error) => {
+            console.log(error); 
+            }
+            )
+            });
+            break
 	case prefix+'wallpaperanime':
 			wanime = await axios.get('https://nekos.life/api/v2/img/wallpaper')
 			bufwanime = await getBuffer(wanime.data.url)
