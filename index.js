@@ -326,8 +326,7 @@ sanz.on('chat-update', async (mek) => {
 
 switch (command) {
   case prefix+ 'menu':
-  case prefix+ 'help'
-  //
+  case prefix+ 'help':
     let i = []
     let giid = []
     for (mem of totalchat){
@@ -340,19 +339,22 @@ switch (command) {
     }
     let timestampi = speed();
     let sepid = speed() - timestampi
-    var { wa_version, mcc, mnc, os_version, device_manufacturer, device_model } = sanz.user.phone
+    var { device_manufacturer, device_model, mcc, mnc, os_version, os_build_number, wa_version  } = sanz.user.phone
     anu = process.uptime()
-    //MENU NYA!!
+//
     var menu = `Hai ${pushname}
+    
 ❒
 ├ *${ucapanWaktu}*
 ├ *Hit Today : ${hit_today.length}*
-├ *RAM :* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
-├ *MCC :* ${mcc}
-├ *MNC :* ${mnc}
-├ *Versi OS :* ${os_version}
 ├ *Brand Hp :* ${device_manufacturer}
 ├ *Device :* ${device_model}
+├ *RAM :* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+├ *Android :* ${os_version}
+├ *Versi OS :* ${os_build_number}
+├ *MCC :* ${mcc}
+├ *MNC :* ${mnc}
+├ *Whatsapp Version* : ${wa_version}
 ├ *Group Chat :* ${giid.length}
 ├ *Personal Chat :* ${totalchat.length - giid.length}
 ├ *Total Chat :* ${totalchat.length}
@@ -1758,7 +1760,7 @@ case prefix+'covidworld':
 //Maker
 case prefix+'attp':
 						if (args.length < 1) return reply(`Text Nya Mana Ajg?\n> *Contoh* : *${prefix}attp* _Aku Ganz_`)
-						attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
+						attp2 = await getJson(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
 						sanz.sendMessage(from, attp2, sticker, {quoted: mek})
 						break
 case 'okk':
@@ -1771,17 +1773,18 @@ default:
 if (budy.startsWith('>')){
 try {
 if (!isMe) return reply('Only Owner...')
-return sanz.sendMessage(from, JSON.stringify(eval(budy.slice(2)),null,'\t'),text, {quoted: mek})
+console.log(color('> [ EVAL✓ ]'), color(moment(mek.messageTimestamp * 1000).format('DD/MM/YY HH:mm:ss'), 'aqua'), color(`Eval brooo`))
+return await sanz.sendMessage(from, JSON.stringify(eval(budy.slice(2)),null,'\t'),text, {quoted: mek})
 } catch(err) {
 e = String(err)
 reply(e)
 }
-}  
+}
 
 	}
 if (isGroup && budy != undefined) {
 	} else {
-	console.log(color('> [ JAPRI ]', 'red'), 'SELF-MODE', color(sender.split('@')[0]))
+	console.log(color('> [ JAPRI ]', 'red'), 'WEA', color(sender.split('@')[0]))
 	}
 	} catch (e) {
     e = String(e)
@@ -1789,7 +1792,6 @@ if (isGroup && budy != undefined) {
 	console.log('Error : %s', color(e, 'red'))
 	console.log(e)
         }
-	// console.log(e)
 	}
 })
 }
