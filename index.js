@@ -70,60 +70,22 @@ alasan = '-'
 async function starts() {
 	const sanz = new WAConnection()
 	sanz.logger.level = 'warn'
-	console.log('>', '[',color('INFO','blue'),']','Starting Bot...')
-  console.log('>', '[',color('INFO','blue'),']','Configure Connection...')
-  console.log('>', '[',color('INFO','blue'),']','Configure Success, Connecting...')
+	console.log('>', '[',color('INGFO','blue'),']','Menglogin kawan...')
 	sanz.on('qr', () => {
 	console.log(color('[','white'), color('!','red'), color(']','white'), color(' Scan the qr code above'))
 	})
 
 	fs.existsSync('./session.json') && sanz.loadAuthInfo('./session.json')
 	sanz.on('connecting', () => {
-	start('1', 'Connecting...')
+	console.log(color('> [ INGFO ]', 'white'), color('Connecting...'))
 	})
 	sanz.on('open', () => {
-	success('1', 'Connected')
+	console.log(color('> [ INGFO ]', 'white'), color('Connected'))
 	})
 		await sanz.connect({timeoutMs: 30*1000})
   fs.writeFileSync('./session.json', JSON.stringify(sanz.base64EncodedAuthInfo(), null, '\t'))
   
-	sanz.on('group-participants-update', async (anu) => {
-	if (!welkom.includes(anu.jid)) return
-	try {
-	const mdata = await sanz.groupMetadata(anu.jid)
-	console.log(anu)
-	if (anu.action == 'add') {
-	num = anu.participants[0]
-	try {
-	ppimg = await sanz.getProfilePicture(`${anu.participants[0].split('@')[0]}@c.us`)
-	} catch {
-	ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-	}
-	teks = `Halo @${num.split('@')[0]}\nSelamat datang di group *${mdata.subject}*`
-	let buff = await getBuffer(ppimg)
-	sanz.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
-	} else if (anu.action == 'remove') {
-	num = anu.participants[0]
-	try {
-	ppimg = await sanz.getProfilePicture(`${num.split('@')[0]}@c.us`)
-	} catch {
-	ppimg = 'https://i0.wp.com/www.gambarunik.id/wp-content/uploads/2019/06/Top-Gambar-Foto-Profil-Kosong-Lucu-Tergokil-.jpg'
-	}
-	teks = `Sayonara @${num.split('@')[0]}👋`
-	let buff = await getBuffer(ppimg)
-	sanz.sendMessage(mdata.id, buff, MessageType.image, {caption: teks, contextInfo: {"mentionedJid": [num]}})
-	}
-	} catch (e) {
-	console.log('Error : %s', color(e, 'red'))
-	}
-	})
 	
-	sanz.on('CB:Blocklist', json => {
-  if (blocked.length > 2) return
-	    for (let i of json[1].blocklist) {
-	    	blocked.push(i.replace('c.us','s.whatsapp.net'))
-	}
-	})
 	// Mek
 sanz.on('chat-update', async (mek) => {
 	try {
@@ -357,19 +319,44 @@ sanz.on('chat-update', async (mek) => {
 		const isQuotedVideo = type === 'extendedTextMessage' && content.includes('videoMessage')
 		const isQuotedAudio = type === 'extendedTextMessage' && content.includes('audioMessage')
 		const isQuotedSticker = type === 'extendedTextMessage' && content.includes('stickerMessage')
-      	if (!isGroup && isCmd) console.log('\x1b[1;37m~>', '[  \x1b[1;36mEXEC\x1b[1;37m  ]', time, color(command), 'from', color(sender.split('@')[0]))
-     	if (isCmd && isGroup) console.log('\x1b[1;37m~>', '[  \x1b[1;36mEXEC\x1b[1;37m  ]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName))
+      	if (!isGroup && isCmd) console.log('\x1b[1;37m>', '[ \x1b[1;36mEXECC\x1b[1;37m ]', time, color(command), 'from', color(sender.split('@')[0]))
+     	if (isCmd && isGroup) console.log('\x1b[1;37m>', '[ \x1b[1;36mEXECC\x1b[1;37m ]', time, color(command), 'from', color(sender.split('@')[0]), 'in', color(groupName))
 
 		if (!mek.key.fromMe && banChats === true) return
 
 switch (command) {
   case prefix+ 'menu':
-  case prefix+ 'help':
-  var menu = `Hai ${pushname}
-
+  case prefix+ 'help'
+  //
+    let i = []
+    let giid = []
+    for (mem of totalchat){
+      i.push(mem.jid)
+    }
+    for (id of i){
+      if (id && id.includes('g.us')){
+        giid.push(id)
+      }
+    }
+    let timestampi = speed();
+    let sepid = speed() - timestampi
+    var { wa_version, mcc, mnc, os_version, device_manufacturer, device_model } = sanz.user.phone
+    anu = process.uptime()
+    //MENU NYA!!
+    var menu = `Hai ${pushname}
 ❒
 ├ *${ucapanWaktu}*
 ├ *Hit Today : ${hit_today.length}*
+├ *RAM :* ${(process.memoryUsage().heapUsed / 1024 / 1024).toFixed(2)}MB / ${Math.round(require('os').totalmem / 1024 / 1024)}MB
+├ *MCC :* ${mcc}
+├ *MNC :* ${mnc}
+├ *Versi OS :* ${os_version}
+├ *Brand Hp :* ${device_manufacturer}
+├ *Device :* ${device_model}
+├ *Group Chat :* ${giid.length}
+├ *Personal Chat :* ${totalchat.length - giid.length}
+├ *Total Chat :* ${totalchat.length}
+├ *Speed :* ${sepid.toFixed(4)} Second
 └ Prefix : 「 ${prefix} 」
 
 ❏ *OWNER*
@@ -444,6 +431,9 @@ switch (command) {
 ├ *${prefix}emoji*
 ├ *${prefix}attp*
 ├ ❏ *MAKER IMAGE*
+├ blm jadi
+├ blm jadi
+├ blm jadi
 ├ blm jadi
 └ blm jadi
 
@@ -1444,8 +1434,8 @@ case prefix+'pussy':
 			break
 case prefix+'pussyimage':
   /*pusiimg = await axios.get('https://nekos.life/api/v2/img/pussy_jpg')
-			bufwanime = await getBuffer(pusiimg.data.url)
-				sanz.sendMessage(from, buffer, MessageType.sticker, {quoted: mek})h*/
+			bufpusy = await getBuffer(pusiimg.data.url)
+				sanz.sendMessage(from, bufpusy, MessageType.sticker, {quoted: mek})h*/
 			reply('lagi sange bang? nyari apaan loh?, puasa bang xixixi')
 			break
 case prefix+'oppai':
@@ -1771,7 +1761,12 @@ case prefix+'attp':
 						attp2 = await getBuffer(`https://api.xteam.xyz/attp?file&text=${body.slice(6)}`)
 						sanz.sendMessage(from, attp2, sticker, {quoted: mek})
 						break
-
+case 'okk':
+  sanz.toggleDisappearingMessages(from, WA_DEFAULT_EPHEMERAL)
+  break
+case 'op':
+ sanz.toggleDisappearingMessages(from, 0)
+break
 default:
 if (budy.startsWith('>')){
 try {
@@ -1786,7 +1781,7 @@ reply(e)
 	}
 if (isGroup && budy != undefined) {
 	} else {
-	console.log(color('[TEXT]', 'red'), 'SELF-MODE', color(sender.split('@')[0]))
+	console.log(color('> [ JAPRI ]', 'red'), 'SELF-MODE', color(sender.split('@')[0]))
 	}
 	} catch (e) {
     e = String(e)
