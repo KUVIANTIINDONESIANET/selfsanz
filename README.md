@@ -87,7 +87,7 @@
 | TOOLS |YOI|
 | ------------- | ------------- |
 | REVERSE IP |✅|
-| GET (ScreenShoot Website) |✅|
+| GET (SS Website) |✅|
 
 | WIBU |YOI|
 | ------------- | ------------- |
