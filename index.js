@@ -1,6 +1,6 @@
 // SC NYA JANGAN DI JUAL BANG
 //MAKASIH DAH PAKE 
-// THANKS TO MHANKBARBAR AND ALL CREATOR BOT INDO
+// THANKS TO MHANKBARBAR AND ALL CREATOR BOT INDO 
 const
 	{
 		WAConnection,
@@ -1360,7 +1360,7 @@ if (!isMe) return reply('Only Owner...')
       if(!q) return reply('linknya?')
 			.then(res => res.json())
 			qweryna = args.join(' ')
-			eses = await fetchJson(`https://shot.screenshotapi.net/screenshot?&url=${qweryna}`)
+			eses = await fetchJson(`https://shot.screenshotapi.net/screenshot?token=D2TDY3F-G5YMM94-K9JEQT8-FYBDQBB&url=${qweryna}&full_page=true&fresh=true&output=json&file_type=png&wait_for_event=load`)
 			buffqw = await getBuffer(eses.screenshot)
 			sanz.sendMessage(from, buffqw, image, {quoted: mek})
 			.catch(err => {
